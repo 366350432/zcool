@@ -1,0 +1,700 @@
+/*禁用滚动条*/
+body,html{
+    height:100%;
+    overflow: hidden;
+}
+
+/*整个大的包裹器样式*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font: 14px 微软雅黑;
+}
+
+/*ul去除默认黑点*/
+ul{
+    list-style: none;
+}
+
+/*a标签去除下划线*/
+a{
+    text-decoration: none;
+}
+
+@keyframes move1 {
+    0% {
+        transform: translate(330px, -1000px);
+    }
+    20% {
+        transform: translate(330px, 0);
+    }
+    40% {
+        transform: translate(330px, -50px);
+    }
+    60% {
+        transform: translate(330px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes move2 {
+    0% {
+        transform: translate(0, -1000px);
+    }
+    20% {
+        transform: translate(0, 0);
+    }
+    40% {
+        transform: translate(0, -50px);
+    }
+    60% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes move3 {
+    0% {
+        transform: translate(-330px, -1000px);
+    }
+    20% {
+        transform: translate(-330px, 0);
+    }
+    40% {
+        transform: translate(-330px, -50px);
+    }
+    60% {
+        transform: translate(-330px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.wrap{
+    height:100%;
+}
+
+/*头部样式*/
+.wrap .header{
+    height: 60px;
+    width:100%;
+    background : rgba(0,0,0,0.8);
+}
+
+/*header中的包裹层*/
+.headerContent{
+    width:980px;
+    height:100%;
+    margin:0 auto;
+}
+
+/*头部中的logo*/
+.wrap .header .logo{
+    float: left;
+    margin: 16px 20px 0 0;
+
+}
+
+/*头部中的导航条*/
+.wrap .header nav{
+    float: right;
+}
+
+/*#wrap .header .headerContent nav ul::after {*/
+/*content: "";*/
+/*display: block;*/
+/*clear: both*/
+/*}*/
+
+/*头部中的li*/
+.wrap .header nav ul li{
+    float: left;
+    width: 90px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.wrap .header nav ul li:hover{
+    background-color: #fc0;
+}
+
+.wrap .header nav ul li:hover a{
+    color: #000;
+}
+
+.wrap .header nav ul li .active{
+    background-color: #fc0;
+}
+
+.wrap .header nav ul li .active a{
+    color:#000
+}
+
+/*默认选中第一个标签*/
+.wrap .header nav ul li.active{
+    background-color: #fc0;
+}
+
+.wrap .header nav ul li.active a{
+    color:#000
+}
+
+/*头部a标签中的字体颜色*/
+.wrap .header nav ul li a{
+    color: #fff;
+}
+
+/*中间框的图片li*/
+.contentList li{
+    height: 874px;
+}
+
+/*中间文本内容*/
+.wrap .content{
+    height:874px;
+    /*height:100%;*/
+
+    width:100%;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/*中间文本右侧小圆点*/
+.wrap .content .sideNav{
+    position: fixed;
+    top:50%;
+    right:1%;
+    z-index: 3;
+}
+
+.wrap .content .sideNav li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid;
+    margin-top: 10px;
+
+    cursor: pointer;
+}
+
+
+.wrap .content .sideNav li:active{
+    background: #000;
+    cursor: default;
+}
+
+.wrap .content .sideNav li.active{
+    background: #000;
+    cursor: default;
+}
+
+/*文本内容框*/
+.wrap .content .contentList{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:100%;
+    transition: 1s top;
+}
+
+/*第一张背景图片*/
+.wrap .content .contentList .firstLi{
+    position: relative;
+    width:100%;
+    height:100%;
+    background: url("../img/s1.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50% !important;
+    overflow: hidden;
+
+}
+
+.wrap .content .contentList .firstLi section{
+    width: 980px;
+    height: 578px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin:auto;
+}
+
+.wrap .content .contentList .firstLi section .first{
+    width:100%;
+    height:100%;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    margin: auto;
+}
+
+.wrap .content .contentList .firstLi section .first img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -545px;
+    margin-top: -260px;
+    transition: .5s opacity;
+}
+
+/*第二张图片*/
+.wrap .content .contentList .secondLi{
+    position: relative;
+    width:100%;
+    height:100%;
+    background-position: 50% 50% !important;
+    background: url("../img/s2.jpg") no-repeat;
+    overflow: hidden;
+}
+
+.wrap .content .contentList .secondLi section{
+    width:980px;
+    height: 578px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right:0px;
+    margin:auto;
+}
+
+.wrap .content .contentList .secondLi section .second{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom:0px;
+    top: 0px;
+    margin: 0px;
+}
+
+.wrap .content .contentList .secondLi section .second .left {
+    width:837px;
+    height: 437px;
+    position: absolute;
+    left: -140px;
+    margin-top: 40px;
+    z-index: 1;
+}
+
+.wrap .content .contentList .secondLi section .second .left .photoList{
+    width:100%;
+    height:100%
+}
+
+
+.wrap .content .contentList .secondLi section .second .left .photoList li{
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+    transition: 1s transform
+}
+
+.wrap .content .contentList .secondLi section .second .left .photoList li img:nth-child(1){
+    transform: translateY(0)
+}
+
+.wrap .content .contentList .secondLi section .second .left .photoList li img:nth-child(2){
+    transform: translateY(0)
+}
+
+.wrap .content .contentList .secondLi section .second .left .photoList li img:nth-child(3){
+    transform: translateY(0)
+}
+
+.wrap .content .contentList .secondLi section .second .left .photoList li p{
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.wrap .content .contentList .secondLi section .second .left .photoList li a{
+    margin-left: 80px;
+    background: #fc0;
+    width: 98px;
+    height: 30px;
+    display: block;
+    background: url("../img/buy.jpg") no-repeat;
+    background-position: 50% 50%;
+}
+
+.wrap .content .contentList .secondLi section .second .right {
+    position: absolute;
+    right: -15%;
+    margin-top: 5%;
+    padding-right: 15px;
+    border-right: 2px solid;
+    transition: 1s transform;
+    transform: translateY(0);
+}
+
+.wrap .content .contentList .secondLi section .second .right h1{
+    font-size:34px;
+    color: #333;
+    font-weight:100;
+    text-align: right;
+}
+
+.wrap .content .contentList .secondLi section .second .right p{
+    margin-top:20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+    text-align: right;
+}
+
+.wrap .content .contentList .secondLi section .second .right a{
+    color: #333;
+    text-align: right;
+}
+
+.wrap .content .contentList .secondLi section .second .bg {
+    position: absolute;
+    right: -193px;
+    bottom:0;
+}
+
+
+/*第三张图片*/
+.wrap .content .contentList .thirdLi{
+    position: relative;
+    overflow: hidden;
+    width:100%;
+    height:100%;
+    background: url("../img/s3.jpg") no-repeat;
+    background-position: 50% 50%;
+}
+
+.wrap .content .contentList .thirdLi section{
+    width:980px;
+    height : 578px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto
+}
+
+.wrap .content .contentList .thirdLi section .third{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto
+}
+
+.wrap .content .contentList .thirdLi section .third .left{
+    position: absolute;
+    left: -145px;
+    width: 837px;
+    height: 437px;
+    margin-top: 40px;
+    z-index: 1
+}
+
+.wrap .content .contentList .thirdLi section .third .left .photoList{
+
+    width : 100%;
+    heihgt : 100%;
+}
+
+.wrap .content .contentList .thirdLi section .third .left .photoList li{
+
+    float: left;
+    margin-left: 20px;
+    text-align: center;
+    transition: 1s transform;
+}
+
+.wrap .content .contentList .thirdLi section .third .left .photoList li img:nth-child(2){
+    transform: translateX(0)
+}
+
+.wrap .content .contentList .thirdLi section .third .left .photoList li img:nth-child(3){
+    transform: translateX(0)
+}
+
+.wrap .content .contentList .thirdLi section .third .left .photoList li p{
+    margin:20px 0;
+    font-size: 18px;
+}
+
+.wrap .content .contentList .thirdLi section .third .left .photoList li a{
+    margin-left:80px;
+    background: #fc0;
+    width: 98px;
+    height: 30px;
+    background: url("../img/buy.jpg") no-repeat;
+    background-position: 50% 50%;
+    display:block;
+}
+
+
+.wrap .content .contentList .thirdLi section .third .right{
+    position: absolute;
+    right: -15%;
+    margin-top:5%;
+    padding-right: 15px;
+    border-right:2px solid;
+    transition: 1s transform;
+    transform: translateY(0)
+}
+
+.wrap .content .contentList .thirdLi section .third .right h1{
+    font-size: 34px;
+    color: #333;
+    font-weight: 100;
+    text-align: right;
+}
+
+.wrap .content .contentList .thirdLi section .third .right p{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+    text-align: right;
+}
+
+.wrap .content .contentList .thirdLi section .third .right a{
+    color : #333;
+    text-align: right;
+}
+
+.wrap .content .contentList .thirdLi section .third .bg{
+    position: absolute;
+    right: -193px;
+    bottom:0;
+}
+
+
+/*第四个*/
+.wrap .content .contentList .fourLi{
+    position: relative;
+    overflow: hidden;
+    width:100%;
+    height:100%;
+    background: url("../img/s4.jpg") no-repeat;
+    background-position: 50% 50% !important;
+}
+
+.wrap .content .contentList .fourLi section{
+    width: 980px;
+    height: 578px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto
+}
+
+.wrap .content .contentList .fourLi section .four{
+    width:100%;
+    height:100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto
+}
+
+.wrap .content .contentList .fourLi section .four .left{
+    position: absolute;
+    left: -155px;
+    width: 1000px;
+    height: 437px;
+    margin-top: 40px;
+    z-index: 1;
+}
+
+.wrap .content .contentList .fourLi section .four .left .photoList{
+    width:100%;
+    height:100%;
+}
+
+.wrap .content .contentList .fourLi section .four .left .photoList li{
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+    transition: 2s;
+}
+
+.wrap .content .contentList .fourLi section .four .left .photoList li p{
+    margin: 20px 0;
+    font-size:18px;
+}
+
+.wrap .content .contentList .fourLi section .four .left .photoList li a{
+    margin-left: 80px;
+    background: #fc0;
+    width: 98px;
+    height: 30px;
+    background: url(../img/buy.jpg) no-repeat;
+    background-position: 50% 50%;
+    display:block;
+}
+
+.wrap .content .contentList .fourLi section .four .right{
+    position: absolute;
+    right: -15%;
+    margin-top:5%;
+    padding-right: 15px;
+    border-right:2px solid;
+    transition: 2s opacity;
+    opacity: 0;
+}
+
+.wrap .content .contentList .fourLi section .four .right h1{
+    font-size: 34px;
+    color: #333;
+    font-weight: 100;
+    text-align: right;
+}
+
+.wrap .content .contentList .fourLi section .four .right p{
+    margin-top: 20px;
+    margin-bottom:10px;
+    font-size: 18px;
+    color:#333;
+    text-align:right
+}
+
+.wrap .content .contentList .fourLi section .four .right a{
+    color:#333;
+    text-align: right;
+}
+
+.wrap .content .contentList .fourLi section .four .bg{
+    position: absolute;
+    right: -193px;
+    bottom:0
+}
+
+
+/*第五个*/
+.wrap .content .contentList .fiveLi{
+    position: relative;
+    width:100%;
+    height:100%;
+    background-position: 50% 50% !important;
+    background: url(../img/s5.jpg) no-repeat;
+    overflow: hidden;
+}
+
+.wrap .content .contentList .fiveLi section{
+    width:980px;
+    height: 574px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto
+}
+
+.wrap .content .contentList .fiveLi section .five{
+    width:100%;
+    height:100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.wrap .content .contentList .fiveLi section .five .left{
+    position: absolute;
+    left: -145px;
+    width: 1000px;
+    height:437px;
+    margin-top: 40px;
+    z-index:1
+}
+
+.wrap .content .contentList .fiveLi section .five .left .photoList{
+    width:100%;
+    height:100%;
+
+}
+
+.wrap .content .contentList .fiveLi section .five .left .photoList li{
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+    transition: 1s transform;
+    transform: translate3d(-1000px, -800px, -500px) rotateX(145deg)
+}
+
+.wrap .content .contentList .fiveLi section .five .left .photoList li p{
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.wrap .content .contentList .fiveLi section .five .left .photoList li a{
+    margin-left: 80px;
+    background: #fc0;
+    width: 98px;
+    height: 30px;
+    background: url("../img/buy.jpg") no-repeat;
+    background-position: 50% 50%;
+    display: block;
+}
+
+.wrap .content .contentList .fiveLi section .five .right{
+    position: absolute;
+    right:-15%;
+    margin-top: 5%;
+    padding-right:15px;
+    border-right: 2px solid;
+    transition: 1s opacity;
+    opacity : 0
+}
+
+.wrap .content .contentList .fiveLi section .five .right h1{
+    font-size: 34px;
+    font-weight: 100;
+    color: #333;
+    text-align: right;
+}
+
+.wrap .content .contentList .fiveLi section .five .right p{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+    text-align: right;
+}
+
+.wrap .content .contentList .fiveLi section .five .right a{
+    color: #333;
+    text-align: right;
+}
+
+.wrap .content .contentList .fiveLi section .five .bg{
+    position : absolute;
+    right: -193px;
+    bottom:0;
+}
+
+
+
+
+
+
+
